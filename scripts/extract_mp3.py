@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 
 # Code inspired by https://github.com/ros-drivers/audio_common/issues/1
+# Usage:
+# $ rosrun data_processing extract_mp3.py 2014-05-11-10-57-38.bag
 
 import sys
 import rospy
