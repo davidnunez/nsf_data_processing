@@ -2,7 +2,11 @@
 
 # Code inspired by https://github.com/ros-drivers/audio_common/issues/1
 # Usage:
-# $ rosrun data_processing extract_mp3.py 2014-05-11-10-57-38.bag
+# $ rosrun data_processing extract_mp3.py sample.bag
+#
+# # This generated mp3 has issues with its vbr header.  This can be fixed using utilities:
+# $ vbrfix -always -makevbr sample.mp3
+# $ mp3val sample.mp3 -f -t
 
 import sys
 import rospy
