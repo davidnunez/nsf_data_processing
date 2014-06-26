@@ -3,7 +3,7 @@ nsf_data_processing
 
 Scripts and tools useful for my tinkerbook study
 
-## Todo
+## Todo & Notes
 
 - make study launcher
 - make rqt fuser
