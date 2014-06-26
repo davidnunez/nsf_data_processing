@@ -8,3 +8,4 @@ Scripts and tools useful for my tinkerbook study
 - make study launcher
 - make rqt fuser
 - make post-processor
+- make better launcher
