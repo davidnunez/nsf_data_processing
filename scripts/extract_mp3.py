@@ -8,23 +8,103 @@
 # $ vbrfix -always -makevbr sample.mp3
 # $ mp3val sample.mp3 -f -t
 
+import json
 import sys
 import rospy
+from subprocess import call
 from ros import rosbag
+from PIL import Image, ImageDraw, ImageFont
+import os, errno
 
-def extract_audio(bag_path, topic_name, mp3_path):
+def mkdir_p(path):
+        try:
+                os.makedirs(path)
+        except OSError as exc:
+                if exc.errno == errno.EEXIST and os.path.isdir(path):
+                        pass
+                else:
+                        raise
+
+
+def extract_audio(bag_path, topic_name, mp3_path, start=None, stop=None):
 	print 'Opening bag:' +  bag_path
-	bag = rosbag.Bag(bag_path)
-	mp3_file = open(mp3_path, 'w')
+	# print 'start: %d, stop: %d'%(start, stop)
+	bag = rosbag.Bag(bag_path + ".bag")
+	mp3_file = open(bag_path + "/" + bag_path + ".mp3", 'w')
 	print 'Reading audio messages and saving to mp3 file'
-	msg_count = 0
-	for topic, msg, stamp in bag.read_messages(topics=[topic_name]):
-		if msg._type == 'audio_common_msgs/AudioData':
-			msg_count += 1
+	audio_msg_count = 0
+        video_msg_count = 0
+        display_message_1 = "..."
+        display_message_2 = "..."
+        display_message_3 = "..."
+        fingerDown = False
+	for topic, msg, stamp in bag.read_messages():
+		if (stop != None and stop < stamp.secs):
+			break
+		if (start != None and start > stamp.secs):
+			continue
+		#print topic
+                if msg._type == 'audio_common_msgs/AudioData':
+			audio_msg_count += 1
 			mp3_file.write(''.join(msg.data))
-	bag.close()
-	mp3_file.close()
-	print 'Done. %d audio messages written to %s'%(msg_count, mp3_path)
+                if topic == '/usb_cam2/image_raw/compressed':
+                        img_filename = 'frame%010d.jpg'%(video_msg_count)
+                        # print img_filename
+                        image_file = open(bag_path + "/images/raw/" + img_filename, 'w')
+                        image_file.write(''.join(msg.data))
+                        image_file.close()
+                        image = Image.open(bag_path + "/images/raw/" + img_filename)
+                        draw = ImageDraw.Draw(image)
+                        # font = ImageFont.truetype("arial.ttf", 20, encoding = "unic")
+                        draw.text( (10,10), '%d.%d'%(stamp.secs, stamp.nsecs) + ": " + display_message_1, fill = '#ffffff') #, font=font)
+                        draw.text( (10,20), display_message_2, fill = '#ffffff')
+                        if (fingerDown):
+                                draw.text ((10, 30), "fingerDown", fill = "#ff0000")
+                        image.save(bag_path + "/images/annotated/" + img_filename)
 
+                        video_msg_count +=1
+                if topic == '/intent_to_ros':
+                        if not 'finger' in msg.data:
+                                try:
+                                        if 'scene' in msg.data:
+                                                j = json.loads(msg.data)
+                                                display_message_1 = j['value']
+                                        else:
+                                                j = json.loads(msg.data)
+                                                display_message_2 = j['value']
+                                except:
+                                        display_message_2 = msg.data
+                        if 'fingerDown' in msg.data:
+                                fingerDown = True
+                        if 'fingerUp' in msg.data:
+                                fingerDown = False
+        bag.close()
+	mp3_file.close()
+	print 'Done.'
+        print '%d audio messages written to %s'%(audio_msg_count, mp3_path)
+        print '%d images saved'%(video_msg_count)
 if __name__ == '__main__':
-	extract_audio(sys.argv[1], "/audio", sys.argv[1] + ".mp3")
+        mkdir_p(sys.argv[1])
+        mkdir_p(sys.argv[1]+'/images/')
+        mkdir_p(sys.argv[1]+'/images/raw/')
+        mkdir_p(sys.argv[1]+'/images/annotated/')
+	print sys.argv        
+        bag_name = sys.argv[1]
+	if len(sys.argv) > 2:
+		start = int(sys.argv[2])
+	else:
+		start = None
+	if len(sys.argv) > 3:
+		stop = int(sys.argv[3])
+	else:
+		stop = None
+	extract_audio(bag_name, "/audio", bag_name + ".mp3", start, stop)
+
+
+
+
+
+
+
+
+

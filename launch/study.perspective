@@ -1,0 +1,272 @@
+{
+  "keys": {}, 
+  "groups": {
+    "pluginmanager": {
+      "keys": {
+        "running-plugins": {
+          "type": "repr", 
+          "repr": "{u'rqt_topic/TopicPlugin': [1], u'rqt_publisher/Publisher': [1]}"
+        }
+      }, 
+      "groups": {
+        "plugin__rqt_image_view__ImageView__1": {
+          "keys": {}, 
+          "groups": {
+            "dock_widget__ImageViewWidget": {
+              "keys": {
+                "dockable": {
+                  "type": "repr", 
+                  "repr": "u'true'"
+                }, 
+                "parent": {
+                  "type": "repr", 
+                  "repr": "None"
+                }
+              }, 
+              "groups": {}
+            }, 
+            "plugin": {
+              "keys": {
+                "dynamic_range": {
+                  "type": "repr", 
+                  "repr": "u'false'"
+                }, 
+                "max_range": {
+                  "type": "repr", 
+                  "repr": "u'4'"
+                }, 
+                "topic": {
+                  "type": "repr", 
+                  "repr": "u'/usb_cam1/image_raw/compressed'"
+                }, 
+                "zoom1": {
+                  "type": "repr", 
+                  "repr": "u'true'"
+                }
+              }, 
+              "groups": {}
+            }
+          }
+        }, 
+        "plugin__rqt_plot__Plot__1": {
+          "keys": {}, 
+          "groups": {
+            "plugin": {
+              "keys": {
+                "autoscroll": {
+                  "type": "repr", 
+                  "repr": "u'true'"
+                }, 
+                "plot_type": {
+                  "type": "repr", 
+                  "repr": "u'1'"
+                }, 
+                "topics": {
+                  "type": "repr", 
+                  "repr": "u''"
+                }
+              }, 
+              "groups": {}
+            }
+          }
+        }, 
+        "plugin__rqt_bag__Bag__1": {
+          "keys": {}, 
+          "groups": {
+            "dock_widget__BagWidget": {
+              "keys": {
+                "dockable": {
+                  "type": "repr", 
+                  "repr": "u'true'"
+                }, 
+                "parent": {
+                  "type": "repr", 
+                  "repr": "None"
+                }
+              }, 
+              "groups": {}
+            }
+          }
+        }, 
+        "plugin__rqt_graph__RosGraph__1": {
+          "keys": {}, 
+          "groups": {
+            "plugin": {
+              "keys": {
+                "graph_type_combo_box_index": {
+                  "type": "repr", 
+                  "repr": "u'1'"
+                }, 
+                "topic_filter_line_edit_text": {
+                  "type": "repr", 
+                  "repr": "u'/'"
+                }, 
+                "filter_line_edit_text": {
+                  "type": "repr", 
+                  "repr": "u'/'"
+                }, 
+                "highlight_connections_check_box_state": {
+                  "type": "repr", 
+                  "repr": "u'true'"
+                }, 
+                "actionlib_check_box_state": {
+                  "type": "repr", 
+                  "repr": "u'true'"
+                }, 
+                "quiet_check_box_state": {
+                  "type": "repr", 
+                  "repr": "u'true'"
+                }, 
+                "dead_sinks_check_box_state": {
+                  "type": "repr", 
+                  "repr": "u'true'"
+                }, 
+                "leaf_topics_check_box_state": {
+                  "type": "repr", 
+                  "repr": "u'true'"
+                }, 
+                "namespace_cluster_check_box_state": {
+                  "type": "repr", 
+                  "repr": "u'true'"
+                }, 
+                "auto_fit_graph_check_box_state": {
+                  "type": "repr", 
+                  "repr": "u'true'"
+                }
+              }, 
+              "groups": {}
+            }
+          }
+        }, 
+        "plugin__rqt_publisher__Publisher__1": {
+          "keys": {}, 
+          "groups": {
+            "dock_widget__PublisherWidget": {
+              "keys": {
+                "dockable": {
+                  "type": "repr", 
+                  "repr": "True"
+                }, 
+                "parent": {
+                  "type": "repr", 
+                  "repr": "None"
+                }
+              }, 
+              "groups": {}
+            }, 
+            "plugin": {
+              "keys": {
+                "publishers": {
+                  "type": "repr", 
+                  "repr": "u'[{\\'topic_name\\': \\'/rosout\\', \\'type_name\\': \\'rosgraph_msgs/Log\\', \\'enabled\\': False, \\'rate\\': 1.0, \\'expressions\\': {}, \\'publisher_id\\': 0, \\'counter\\': 0}, {\\'topic_name\\': \\'/ros_to_intent\\', \\'type_name\\': \\'std_msgs/String\\', \\'enabled\\': False, \\'rate\\': 1.0, \\'expressions\\': {u\\'/ros_to_intent/data\\': \\'\"{\\\\\\\\\"tablet_id\\\\\\\\\":1, \\\\\\\\\"key\\\\\\\\\":\\\\\\\\\"start_prompt\\\\\\\\\" }\"\\'}, \\'publisher_id\\': 1, \\'counter\\': 24}, {\\'topic_name\\': \\'/ros_to_intent\\', \\'type_name\\': \\'std_msgs/String\\', \\'enabled\\': False, \\'rate\\': 1.0, \\'expressions\\': {u\\'/ros_to_intent/data\\': \\'\"{\\\\\\\\\"tablet_id\\\\\\\\\":1, \\\\\\\\\"key\\\\\\\\\":\\\\\\\\\"stop\\\\\\\\\" }\"\\'}, \\'publisher_id\\': 2, \\'counter\\': 15666}, {\\'type_name\\': \\'std_msgs/String\\', \\'topic_name\\': \\'/ros_to_intent\\', \\'enabled\\': False, \\'rate\\': 1.0, \\'expressions\\': {u\\'/ros_to_intent/data\\': \\'\"{\\\\\\\\\"tablet_id\\\\\\\\\":1, \\\\\\\\\"key\\\\\\\\\":\\\\\\\\\"start_no_prompt\\\\\\\\\" }\"\\'}, \\'publisher_id\\': 4, \\'counter\\': 51}, {\\'type_name\\': \\'std_msgs/String\\', \\'topic_name\\': \\'/ros_to_intent\\', \\'enabled\\': False, \\'rate\\': 1.0, \\'expressions\\': {u\\'/ros_to_intent/data\\': \\'\"{\\\\\\\\\"tablet_id\\\\\\\\\":1, \\\\\\\\\"key\\\\\\\\\":\\\\\\\\\"start_auto\\\\\\\\\" }\"\\'}, \\'publisher_id\\': 5, \\'counter\\': 2}]'"
+                }
+              }, 
+              "groups": {}
+            }
+          }
+        }, 
+        "plugin__rqt_topic__TopicPlugin__1": {
+          "keys": {}, 
+          "groups": {
+            "dock_widget__TopicWidget": {
+              "keys": {
+                "dockable": {
+                  "type": "repr", 
+                  "repr": "True"
+                }, 
+                "parent": {
+                  "type": "repr", 
+                  "repr": "None"
+                }
+              }, 
+              "groups": {}
+            }
+          }
+        }, 
+        "plugin__rqt_top__TOP__1": {
+          "keys": {}, 
+          "groups": {
+            "dock_widget__": {
+              "keys": {
+                "dockable": {
+                  "type": "repr", 
+                  "repr": "u'true'"
+                }, 
+                "parent": {
+                  "type": "repr", 
+                  "repr": "None"
+                }
+              }, 
+              "groups": {}
+            }, 
+            "plugin": {
+              "keys": {
+                "is_regex": {
+                  "type": "repr", 
+                  "repr": "u'0'"
+                }, 
+                "filter_text": {
+                  "type": "repr", 
+                  "repr": "u''"
+                }
+              }, 
+              "groups": {}
+            }
+          }
+        }, 
+        "plugin__rqt_shell__Shell__1": {
+          "keys": {}, 
+          "groups": {
+            "dock_widget__XTermWidget": {
+              "keys": {
+                "dockable": {
+                  "type": "repr", 
+                  "repr": "u'true'"
+                }, 
+                "parent": {
+                  "type": "repr", 
+                  "repr": "None"
+                }
+              }, 
+              "groups": {}
+            }, 
+            "plugin": {
+              "keys": {
+                "shell_type": {
+                  "type": "repr", 
+                  "repr": "u'0'"
+                }
+              }, 
+              "groups": {}
+            }
+          }
+        }
+      }
+    }, 
+    "mainwindow": {
+      "keys": {
+        "geometry": {
+          "type": "repr(QByteArray.hex)", 
+          "repr(QByteArray.hex)": "QtCore.QByteArray('01d9d0cb000100000000003a0000001800000788000004850000004200000034000007800000047d000000000000')", 
+          "pretty-print": "     :       B 4   }   "
+        }, 
+        "state": {
+          "type": "repr(QByteArray.hex)", 
+          "repr(QByteArray.hex)": "QtCore.QByteArray('000000ff00000000fd00000002000000000000073f00000312fc0200000002fb00000040007200710074005f007300680065006c006c005f005f005300680065006c006c005f005f0031005f005f0058005400650072006d0057006900640067006500740100000019000000a30000000000000000fb00000058007200710074005f007000750062006c00690073006800650072005f005f005000750062006c00690073006800650072005f005f0031005f005f005000750062006c006900730068006500720057006900640067006500740100000019000003120000009600ffffff000000030000073f00000103fc0100000007fb00000030005f005f0044006f0063006b0057006900640067006500740043006f006e007400610069006e00650072005f005f003101000000000000073f0000000000000000fb00000050007200710074005f0061006300740069006f006e005f005f0041006300740069006f006e0050006c007500670069006e005f005f0031005f005f006d0065007300730061006700650073002e0075006901000004d8000002670000000000000000fb00000044007200710074005f00670072006100700068005f005f0052006f007300470072006100700068005f005f0031005f005f0052006f0073004700720061007000680055006901000000000000038a0000000000000000fc000000000000073f000000d600fffffffa000000010200000002fb00000022007200710074005f0074006f0070005f005f0054004f0050005f005f0031005f005f0100000000ffffffff0000000000000000fb0000004c007200710074005f0074006f007000690063005f005f0054006f0070006900630050006c007500670069006e005f005f0031005f005f0054006f00700069006300570069006400670065007401000000190000041b0000007500fffffffb00000042007200710074005f0070006c006f0074005f005f0050006c006f0074005f005f0031005f005f00440061007400610050006c006f0074005700690064006700650074010000052b000002140000000000000000fb0000005a007200710074005f0069006d006100670065005f0076006900650077005f005f0049006d0061006700650056006900650077005f005f0031005f005f0049006d006100670065005600690065007700570069006400670065007401000004ab000002940000000000000000fb00000034007200710074005f006200610067005f005f004200610067005f005f0031005f005f0042006100670057006900640067006500740100000377000003c80000000000000000000000000000031200000004000000040000000800000008fc00000001000000030000000100000036004d0069006e0069006d0069007a006500640044006f0063006b00570069006400670065007400730054006f006f006c0062006100720000000000ffffffff0000000000000000')", 
+          "pretty-print": "                 @rqt_shell__Shell__1__XTermWidget          Xrqt_publisher__Publisher__1__PublisherWidget                   0__DockWidgetContainer__1          Prqt_action__ActionPlugin__1__messages.ui          Drqt_graph__RosGraph__1__RosGraphUi            ?                                                                                   u                                       +                                                                                            w                                                              "
+        }
+      }, 
+      "groups": {
+        "toolbar_areas": {
+          "keys": {
+            "MinimizedDockWidgetsToolbar": {
+              "type": "repr", 
+              "repr": "8"
+            }
+          }, 
+          "groups": {}
+        }
+      }
+    }
+  }
+}
