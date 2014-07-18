@@ -31,7 +31,7 @@ This should be installed somewhere in your active ros workspace. (you will proba
 ## Usage:
 
     # - processing bag file: test.bag
-    # - creates a subdirectory called "0629_20_subject" with:
+    # - creates a subdirectory called "test" with:
     # - images/raw images/annotated	test.avi  test.mp3  test_nosound.avi
     
     # export complete movie:
