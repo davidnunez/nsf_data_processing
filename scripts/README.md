@@ -24,6 +24,8 @@ _Note: this is a hack to help export segments of video (including sound) from ro
 This should be installed somewhere in your active ros workspace. (you will probably need to do a catkin source setup to include this in your rospath)... 
 
     # assuming workspace is in ~/projects/catkin_ws/
+    cd ~/projects 
+    git clone https://github.com/davidnunez/nsf_data_processing.git
     source ~/projects/catkin_ws/devel/setup.bash
 
 ## Usage:
