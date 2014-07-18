@@ -3,6 +3,8 @@ nsf_data_processing
 
 Scripts and tools useful for my tinkerbook study
 
+- [ROS Bag to AVI Hack](https://github.com/davidnunez/nsf_data_processing/tree/master/scripts)
+
 ## Todo & Notes
 
 - make study launcher
