@@ -35,13 +35,13 @@ This should be installed somewhere in your active ros workspace. (you will proba
     # - images/raw images/annotated	test.avi  test.mp3  test_nosound.avi
     
     # export complete movie:
-    rosrun nsf_data_processing export.sh 0629_20_subject
+    rosrun nsf_data_processing export.sh test
     
     # export movie from timestamp 1404056566 to end
-    rosrun nsf_data_processing export.sh 0629_20_subject 1404056566
+    rosrun nsf_data_processing export.sh test 1404056566
 
     # export movie from timestamp 1404056566 to 1404056595
-    rosrun nsf_data_processing export.sh 0629_20_subject 1404056566 1404056595
+    rosrun nsf_data_processing export.sh test 1404056566 1404056595
 
 
 
