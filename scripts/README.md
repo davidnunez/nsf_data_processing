@@ -55,5 +55,9 @@ This should be installed somewhere in your active ros workspace. (you will proba
 	
 - export.sh will spit out an _annotated_ avi (i.e. timestamp and intent messages superimposed on the frames). The fastest way to change to an export w/o the annotation is by changing the word "annotated" to "raw" in the export.sh script
 - timestamps are absolute as recorded by the ROS clock and are only the "whole seconds" portion of the timestamp (i.e. ROS stamp.secs)
+- this may be a useful snippet
 
+        # convert an avi to mp4 starting from time 00:30 for 25 seconds 
+        # (the order of the parameters is important)
+        avconv -ss 00:00:30 -i test.avi -t 25 -c:v libx264 -crf 23 test-clipped.mp4
 
