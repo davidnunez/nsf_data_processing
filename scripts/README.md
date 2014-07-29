@@ -33,6 +33,7 @@ This should be installed somewhere in your active ros workspace. (you will proba
     # - processing bag file: test.bag
     # - creates a subdirectory called "test" with:
     # - images/raw images/annotated	test.avi  test.mp3  test_nosound.avi
+    # - run from directory of bag
     
     # export complete movie:
     rosrun nsf_data_processing export.sh test
@@ -46,6 +47,7 @@ This should be installed somewhere in your active ros workspace. (you will proba
 
 
 ## Usage Notes
+
 
 - there is no ".bag" in the filename parameter
 - the audio and video topic are hardcoded in extract_mp3.py -- you'll probably want to change this:

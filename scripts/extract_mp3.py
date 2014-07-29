@@ -1,8 +1,15 @@
 #!/usr/bin/env python
 
+# From a rosbag, this script outputs an mp3 file from an audio topic 
+# and a directory of images from image topic. It also outputs another
+# directory of the same images with time stamp and annotation information
+# overlaid.
+#
 # Code inspired by https://github.com/ros-drivers/audio_common/issues/1
 # Usage:
 # $ rosrun data_processing extract_mp3.py sample.bag
+#
+# Run from the directory of the bag file.
 #
 # # This generated mp3 has issues with its vbr header.  This can be fixed using utilities:
 # $ vbrfix -always -makevbr sample.mp3
@@ -15,6 +22,9 @@ from subprocess import call
 from ros import rosbag
 from PIL import Image, ImageDraw, ImageFont
 import os, errno
+
+audio_topic = "/audio"
+image_topic = '/usb_robotcam/image_raw/compressed'
 
 def mkdir_p(path):
         try:
@@ -47,7 +57,7 @@ def extract_audio(bag_path, topic_name, mp3_path, start=None, stop=None):
                 if msg._type == 'audio_common_msgs/AudioData':
 			audio_msg_count += 1
 			mp3_file.write(''.join(msg.data))
-                if topic == '/usb_cam2/image_raw/compressed':
+                if topic == image_topic:
                         img_filename = 'frame%010d.jpg'%(video_msg_count)
                         # print img_filename
                         image_file = open(bag_path + "/images/raw/" + img_filename, 'w')
@@ -83,6 +93,8 @@ def extract_audio(bag_path, topic_name, mp3_path, start=None, stop=None):
 	print 'Done.'
         print '%d audio messages written to %s'%(audio_msg_count, mp3_path)
         print '%d images saved'%(video_msg_count)
+
+
 if __name__ == '__main__':
         mkdir_p(sys.argv[1])
         mkdir_p(sys.argv[1]+'/images/')
@@ -98,7 +110,7 @@ if __name__ == '__main__':
 		stop = int(sys.argv[3])
 	else:
 		stop = None
-	extract_audio(bag_name, "/audio", bag_name + ".mp3", start, stop)
+	extract_audio(bag_name, audio_topic, bag_name + ".mp3", start, stop)
 
 
 
